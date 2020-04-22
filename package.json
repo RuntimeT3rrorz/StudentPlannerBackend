@@ -1,0 +1,21 @@
+{
+  "name": "StudentPlannerBackend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/RuntimeT3rrorz/StudentPlannerBackend.git",
+  "author": "RuntimeT3rrorz",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.10",
+    "passport": "^0.4.1",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "express-session": "^1.17.1"
+  }
+}
