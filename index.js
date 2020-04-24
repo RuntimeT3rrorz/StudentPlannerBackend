@@ -4,6 +4,8 @@ const mongoose = require('mongoose')
 const passport = require('passport');
 const Strategy = require('passport-http').BasicStrategy;
 const bcrypt = require('bcrypt')
+const compression = require('compression');
+const helmet = require('helmet');
 
 const User = require('./models/User').user;
 
@@ -50,9 +52,12 @@ function makeUser() {
 }
 
 // Setup Middlewares
+app.use(express.static("public"))
 app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(require('body-parser').json());
 app.use(require('express-session')({ secret: process.env.DB_PASSWORD, resave: false, saveUninitialized: false }));
+app.use(helmet());
+app.use(compression());
 
 // Initialize Passport and restore authentication state, if any, from the
 // session.
