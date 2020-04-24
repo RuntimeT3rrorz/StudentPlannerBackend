@@ -87,6 +87,6 @@ app.post('/signup', (req, res) => {
     })
 })
 
-app.get('', (res, req) => res.send("Hi!"))
+app.get('', (req, res) => res.send("Hi!"))
 
 app.listen(port, () => console.log(`Backend app listening at http://localhost:${port}`))
