@@ -13,7 +13,7 @@ const app = express()
 const port = 3000
 
 mongoose.connect(`mongodb+srv://appUser:${process.env.DB_PASSWORD}@studentplannercluster-ykqqe.mongodb.net/test?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true});
-
+console.log(process.env.DB_PASSWORD);
 // Compares password to its hash
 passport.use(new Strategy(
     function(username, password, cb) {
