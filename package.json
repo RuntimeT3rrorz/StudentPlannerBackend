@@ -17,5 +17,11 @@
     "passport": "^0.4.1",
     "passport-http": "^0.3.0",
     "passport-local": "^1.0.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "v13.12.0"
   }
 }
