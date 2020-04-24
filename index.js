@@ -65,15 +65,15 @@ app.use(passport.session());
 
 app.get('/login',
     passport.authenticate('basic'),
-    (req, res) => res.send("You have logged in!"))
+    (req, res) => res.send(JSON.stringify({success: 0})))
 
 app.post('/signup', (req, res) => {
     bcrypt.hash(req.body.password, 10, (err, result) => {
-        if (err) { throw err}
+        if (err) { res.send(JSON.stringify({error: 0}))throw err }
 
         User.findOne({ username: req.body.username }, (err, existing_user) => {
             if (existing_user) {
-                res.send("User already exists!")
+                res.send(JSON.stringify({error: 1}))
                 return null
             }
 
@@ -82,7 +82,7 @@ app.post('/signup', (req, res) => {
                 password: result
             })
             user.save()
-            res.send("User created!")
+            res.send(JSON.stringify({success: 0}))
         })
     })
 })
