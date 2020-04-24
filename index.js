@@ -52,7 +52,6 @@ function makeUser() {
 }
 
 // Setup Middlewares
-app.use(express.static("public"))
 app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(require('body-parser').json());
 app.use(require('express-session')({ secret: process.env.DB_PASSWORD, resave: false, saveUninitialized: false }));
